@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>memes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="main.js"></script>
+    <link rel="shortcut icon" href="#">
   </head>
 
   <body>
-    <img src="images/wide.png" alt="wide">
-    <a href="balls/balls.html"> Balls </a>
+    <div>
+      <input type="image" src="images/wide.png" class="emote widepeepoHappy" onclick="clicky()">
+      <p hidden>Audio: Jack Stauber - Buttercup (Earthbound/Chiptune Cover)</p>
+    </div>
+    
+    <a href="balls/"> Balls </a>
 
     <h1>This is my testing ground.</h1>
     <p>Everything is WIP.</p>
-    <script src="math.js">
-      function printoutput() {
-        document.getElementById("memes").innerHTML = "asdsad";
-      }
-    </script>
-    <input type="number" name = "first"> <br>
-    <input type="number" name = "second">
+    <script src="math.js"></script>
+    <input type="number" id = "first"> <br>
+    <input type="number" id = "second">
     <div>
-      <button onclick="printoutput()"> click</button>
+      <button onclick="sum()"> click</button>
     </div>
-    <textarea name="output" id="memes" cols="30" rows="10"></textarea>
-    
-    
+    <textarea id="output" id="memes" cols="30" rows="10"></textarea>
     
   </body>
 </html>
