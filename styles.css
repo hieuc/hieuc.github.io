@@ -52,3 +52,7 @@ h1 {
 .emote.widepeepoHappy:active {
   animation: widepeepoHappy-anim-hover 1s infinite;
 }
+
+.emote.widepeepoHappy.animated {
+  animation: widepeepoHappy-anim-hover 1.5s infinite;
+}
