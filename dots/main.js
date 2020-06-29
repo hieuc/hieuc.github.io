@@ -9,9 +9,9 @@ function setup() {
     createCanvas(w - 20, h - 20);
     obstacles.push(new Obstacle(w / 40, h / 4, w / 1.8, 20));
     obstacles.push(new Obstacle(w / 2.2, h / 1.5, w / 2.1, 20));
-    obstacles.push(new Obstacle(w / 4, h / 2.25, w / 2.5, 20));
+    obstacles.push(new Obstacle(w / 4, h / 2.15, w / 2.5, 20));
     obstacles.push(new Obstacle(w / 1.8, h / 4, 20, h / 20));
-    obstacles.push(new Obstacle(w / 3, h / 2.7, 20, h / 12));
+    obstacles.push(new Obstacle(w / 3, h / 2.55, 20, h / 12));
 
     textSize(20);
 }

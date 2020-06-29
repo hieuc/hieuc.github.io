@@ -32,8 +32,8 @@ class Dot {
     update = function() { 
         if (this.alive) {
             if (this.brain.step + 1 > this.brain.directions.length || 
-                this.pos.x < 10 || this.pos.x > window.innerWidth - 20||
-                this.pos.y < 0 || this.pos.y > window.innerHeight - 20) {
+                this.pos.x < 0 || this.pos.x > window.innerWidth - 20||
+                this.pos.y < 5 || this.pos.y > window.innerHeight - 20) {
                 this.alive = false;
             } 
             for (var i = 0; i < obstacles.length; i++) {
