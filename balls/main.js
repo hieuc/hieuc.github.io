@@ -39,7 +39,7 @@ function setup() {
 }
 
 function draw() {
-    background(69);
+    background(100);
     var removing = [];
     for (var i = 0; i < balls.length; i++) {
         // remove the small ball 
