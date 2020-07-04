@@ -65,6 +65,10 @@ function isOutsideScreen(ball) {
     return (x < 0 || y < 0 || x > window.innerWidth || y > window.innerHeight);
 }
 
+function mouseDragged() {
+    balls.push(new Ball(mouseX, mouseY, 30));
+}
+
 function mousePressed() {
     balls.push(new Ball(mouseX, mouseY, 30));
 }
