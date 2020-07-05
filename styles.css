@@ -12,7 +12,7 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2em;
   letter-spacing: -1px;
   position: relative;
   margin: 2px;
@@ -23,26 +23,15 @@ h1 {
   text-shadow: 0 0 4px white;
 }
 
-.duckerz {
-  float:  right;
-  padding-right: 350px;
+.widepeepo-container {
+  margin: 10px;
 }
 
-.duck-s {
-  position: absolute;
-  width: 350px;
-  height: 197px;
+.nav-item {
+  font-size: 20px;
+  padding-right: 1em;
 }
 
-.duck-s:hover {
-  opacity: 0;
-}
-
-.duck-d {
-  position: absolute;
-  width: 350px;
-  height: 197px;
-}
 
 /* source: https://cdn.destiny.gg/emotes/emotes.css */
 @keyframes widepeepoHappy-anim {
