@@ -50,15 +50,21 @@ class Snake {
         if (!(head.x === food.x && head.y === food.y)) {
             this.body.splice(0, 1);
         } else {
+            updateScore();
             spawnFood();
         }
 
         // check death
         for (var i = 0; i < this.body.length - 2; i++) {
             if (head.x === this.body[i].x && head.y === this.body[i].y) {
-                noLoop();
-                setTimeout(loop, 200);
-                this.reset();
+                frameRate(0);
+                setTimeout(function() {
+                    snake.reset();
+                    spawnFood();
+                    updateScore();
+                    frameRate(parseInt(document.getElementById("fps").value));
+                }, 1000);
+                
             }
         }
     }

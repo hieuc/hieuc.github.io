@@ -8,9 +8,36 @@
     <script lang="javascript" type="text/javascript" src="snake.js"></script>
     <script lang="javascript" type="text/javascript" src="main.js"></script>
 
-    <title>Snake</title>
+    <title>Snek</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .stats {
+            float: left;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            width: 250px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="stats">
+        <p>
+            score: <span id="score">0</span>
+        </p>
+        <p>
+            fps: 
+            <input type="range" min=0 max= 60 step=1 value=12 id="fps" onchange="updatefps(parseInt(this.value))">
+        </p>
+        <div>
+            <button onclick="restart()">
+                reset
+            </button>
+        </div>
+    </div>
 </body>
 </html>

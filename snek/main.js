@@ -1,13 +1,13 @@
-var unit = 40;
-var canvasWidth = 1000;
-var canvasHeight = canvasWidth;
+var unit = 30;
+var canvasHeight = 600;
+var canvasWidth = canvasHeight * 1.5;
 var boardW = canvasWidth / unit;
 var boardH = canvasHeight / unit;
 var food = {x: -1, y: -1};
 var snake = new Snake();
 
 function setup() {
-    createCanvas(1000, 1000);
+    createCanvas(canvasWidth, canvasHeight);
     frameRate(12);
     spawnFood();
 }
@@ -36,4 +36,18 @@ function spawnFood() {
     do {
         food = {x: floor(random(0, boardW)), y: floor(random(0, boardH))};
     } while (snake.foodCheck());
+}
+
+function updateScore() {
+    document.getElementById("score").innerText = snake.body.length - 3;
+}
+
+function updatefps(rate) {
+    frameRate(rate);
+}
+
+function restart() {
+    frameRate(12);
+    snake.reset();
+    spawnFood();
 }
