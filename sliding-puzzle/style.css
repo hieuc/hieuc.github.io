@@ -1,0 +1,51 @@
+body {
+    margin: 20px;
+    overflow: scroll;
+    height: auto;
+    background-color: #f2f6ff;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: #e8f7ff;
+}
+
+th, td {
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+th {
+    background-color: #7ddaff;
+}
+
+tr:hover {
+    background-color: #fff6e3;
+}
+
+div {
+    margin: 10px;
+}
+
+#start {
+    padding: 10px;
+    background-color: burlywood;
+}
+
+#start:hover {
+    background-color: chocolate;
+    color: azure;
+}
+
+#canvas {
+    height: 450px;
+}
+
+#reset-table {
+    padding: 10px;
+    margin-left: 10px;
+}

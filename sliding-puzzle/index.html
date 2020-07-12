@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <script lang="javascript" type="text/javascript" src="../libraries/p5.js"></script>
+    <script lang="javascript" type="text/javascript" src="board.js"></script>
+    <script lang="javascript" type="text/javascript" src="logic.js"></script>
+    <script lang="javascript" type="text/javascript" src="node.js"></script>
+    <script lang="javascript" type="text/javascript" src="main.js"></script>
+
+    <title>Sliding puzzle</title>
+</head>
+<body>
+    <div id="canvas"></div>
+    <div>
+        <label>
+            Board string: 
+            <input type="text" id="board-string" maxlength=16 size=16>
+        </label>
+        <input id="update" type="button" value="Update board" onclick="changeState()" />
+        <input id="resetboard" type="button" value="Reset board" onclick="resetBoard()"/>
+    </div>
+    <div>
+        <label>
+            Search algorithm:
+            <select id="algorithm">
+                <option value="BFS">Breadth-first search - BFS</option>
+                <option value="DFS">Depth-first search - DFS</option>
+                <option value="GBFS(h1)">Greedy best-first search with heuristic #1 - GBFS(h1)</option>
+                <option value="GBFS(h2)">Greedy best-first search with heuristic #2 - GBFS(h2)</option>
+                <option value="AStar(h1)">A* with heuristic #1 - AStar(h1)</option>
+                <option value="AStar(h2)">A* with heuristic #2 - AStar(h2)</option>
+                <option value="DLS">Depth limited search - DLS</option>
+                <option value="ID">Iterative deepening - ID</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label>
+            Limit:
+            <input type="number" id="limit" min=0 size=5>
+             (Limit should be > 0)
+        </label>
+    </div>
+    <div>
+        <input id="start" type="button" value="Start search" onclick="startSearch();" />
+        <input type="button" id="reset-table" value="Reset table" onclick="resetTable();">
+    </div>
+    <div id="table-container">
+        Result:
+        <table id="stats">
+            <tr>
+                <th>Attemp</th>
+                <th>Board</th>
+                <th>Algorithm</th>
+                <th>Depth</th>
+                <th>Nodes created</th>
+                <th>Nodes expanded</th>
+                <th>Max fringe</th>
+                <th>Path</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
