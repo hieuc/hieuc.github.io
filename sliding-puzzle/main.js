@@ -10,6 +10,7 @@ function setup() {
     c.parent("canvas");
     c.position(Math.min(window.innerWidth/4, 200), 50);
     document.getElementById("board-string").value = board.currentState;
+    document.getElementById("fringe-limit").value = fringeLimit;
 }
 
 function draw() {
@@ -34,9 +35,10 @@ function keyPressed() {
 }
 
 function startSearch() {
+    changeFringeLimit();
     var mode = document.getElementById("algorithm").selectedIndex;
     var alg = document.getElementById("algorithm").value;
-    var limit = parseInt(document.getElementById("limit").value);
+    var limit = parseInt(document.getElementById("depth-limit").value);
     var result;
     switch (mode) {
         case 0:
@@ -125,4 +127,9 @@ function resetTable() {
     document.getElementById("table-container").removeChild(document.getElementById("stats"));
     document.getElementById("table-container").appendChild(table);
     attempt = 1;
+}
+
+function changeFringeLimit() {
+    var limit = parseInt(document.getElementById("fringe-limit").value);
+    fringeLimit = limit;
 }

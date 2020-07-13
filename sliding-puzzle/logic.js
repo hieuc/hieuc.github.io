@@ -1,5 +1,5 @@
 var toReturn = {found: false, depth: 0, numCreated: 0, numExpanded: 0, maxFringe: 0, path: []};
-var fringeLimit = 30000;
+var fringeLimit = 100000;
 // Breath first search
 function BFS() {
     resetResult();
@@ -80,10 +80,12 @@ function DFS(limit) {
         // pop out a fringe as current node
         var node = fringe.pop();
 
-
         // push to explored
-        explored.push(node.state);
-        toReturn.numExpanded++;
+        // some nodes are explored twice because of backtracking, those will not count 
+        if (!explored.includes(node.state)) {
+            explored.push(node.state);
+            toReturn.numExpanded++;
+        }
 
         // find the next available child
         var nextChild = nextAvailableChild(fringe, explored, node, limit);
@@ -192,11 +194,12 @@ function DLS(limit) {
 function ID() {
     var culmulative = {found: false, depth: 0, numCreated: 0, numExpanded: 0, maxFringe: 0, path: []};
     var i = 1;
+    // loop DFS with increasing depth limit
     while (true) {
         var result = DFS(i);
         culmulative.numCreated += result.numCreated;
         culmulative.numExpanded += result.numExpanded;
-        culmulative.maxFringe += result.maxFringe;
+        culmulative.maxFringe = Math.max(result.maxFringe, culmulative.maxFringe);
         if (result.found) {
             culmulative.found = true;
             culmulative.depth = result.depth;
@@ -207,36 +210,6 @@ function ID() {
     }
 }
 
-function resetResult() {
-    toReturn = {found: false, depth: 0, numCreated: 0, numExpanded: 0, maxFringe: 0, path: []};
-}
-
-function traceSolution(node) {
-    // trace path
-    var tracedChild = node;
-    while (tracedChild !== null) {
-        toReturn.path.push(tracedChild.state);
-        tracedChild = tracedChild.parent;
-    } 
-}
-
-// return the next child available for a state
-// does check if child is already explored or already in the fringe 
-// also check depth limit
-function nextAvailableChild(fringe, explored, node, limit) {
-    if (node.cost >= limit)
-        return null;
-    for (var i = 0; i < node.actions.length; i++) {
-        var newState = board.getNextState(node.state, node.actions[i])
-        if (!explored.includes(newState)) {
-            var child = new Node(node, newState, board.getPossibleActions(newState), node.cost + 1);
-            if (!fringe.includes(child)) {
-                return child;
-            }
-        }
-    }
-    return null;
-}
 
 // heuristic 1: number of misplaced tiles
 function h1(state) {
@@ -269,6 +242,39 @@ function h2(state) {
         result = Math.min(result, sum);
     });
     return result;
+}
+
+
+// return the next child available for a state
+// does check if child is already explored or already in the fringe 
+// also check depth limit
+function nextAvailableChild(fringe, explored, node, limit) {
+    if (node.cost >= limit)
+        return null;
+    for (var i = 0; i < node.actions.length; i++) {
+        var newState = board.getNextState(node.state, node.actions[i])
+        if (!explored.includes(newState)) {
+            var child = new Node(node, newState, board.getPossibleActions(newState), node.cost + 1);
+            if (!fringe.includes(child)) {
+                return child;
+            }
+        }
+    }
+    return null;
+}
+
+
+function resetResult() {
+    toReturn = {found: false, depth: 0, numCreated: 0, numExpanded: 0, maxFringe: 0, path: []};
+}
+
+function traceSolution(node) {
+    // trace path
+    var tracedChild = node;
+    while (tracedChild !== null) {
+        toReturn.path.push(tracedChild.state);
+        tracedChild = tracedChild.parent;
+    } 
 }
 
 function sortByCost(a, b) {
