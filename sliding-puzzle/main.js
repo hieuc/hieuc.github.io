@@ -83,16 +83,16 @@ function startSearch() {
         var indexDiff = result.path[i].indexOf(" ") - result.path[i-1].indexOf(" ");
         switch (indexDiff) {
             case -1:
-                path.push("right");
+                path.push(" right");
                 break;
             case 1:
-                path.push("left");
+                path.push(" left");
                 break;
             case -4:
-                path.push("down");
+                path.push(" down");
                 break;
             case 4:
-                path.push("up");
+                path.push(" up");
                 break;
             default: break; 
         }
