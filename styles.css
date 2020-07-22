@@ -18,9 +18,8 @@ h1 {
   margin: 2px;
   top: -4px;
   right: 5px;
-
+  display: inline-block;
   color: #9400D3;
-  text-shadow: 0 0 4px white;
 }
 
 .widepeepo-container {
@@ -32,6 +31,60 @@ h1 {
   padding-right: 1em;
 }
 
+#container {
+  border: 1px solid gray;
+  padding: 15px;
+  overflow: hidden;
+  float: right;
+  margin: 5px;
+  background-color: lightgray;
+}
+
+#container > h1 {
+  font-size: 50px;
+}
+
+#container > h2 {
+  color: #616161;
+}
+
+#tempf, #tempc {
+  font-size: 70px;
+  display: inline;
+  font-family: sans-serif;
+  float: left;
+}
+
+#units {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  font-weight: bold;
+  color: gray;
+}
+
+#extra {
+  float: right;
+  margin-left: 50px;
+  margin-right: 20px;
+  width: 130px;
+}
+
+img {
+  float: left;
+}
+
+
+#f, #c {
+  font-family: sans-serif;
+}
 
 /* source: https://cdn.destiny.gg/emotes/emotes.css */
 @keyframes widepeepoHappy-anim {
