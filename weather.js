@@ -6,14 +6,15 @@ async function getIP() {
 }
 
 async function getLocation(ip) {
-    var response = await fetch(`http://ip-api.com/json/${ip.ip}`);
+    var key = "1ece34d190c35adb6225523b6059e5bf";
+    var response = await fetch(`http://api.ipstack.com/${ip.ip}?access_key=${key}`);
     var data = await response.json();
     return data;
 }
 
 async function getWeatherData(location) {
     var key = "e04ce75969c48da6f29a8e34552e31b3";
-    var response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${location.zip},${location.countryCode}&appid=${key}&units=metric`);
+    var response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${location.zip},${location.country_code}&appid=${key}&units=metric`);
     var data = await response.json();
     return data;
 }
@@ -40,7 +41,7 @@ getIP().then(zip => {
                 $("#time").html(timeString);
                 $("#city").text(location.city);
                 $("#weather-status").text(wData.weather[0].main);
-                $("#icon").attr("src", `http://openweathermap.org/img/wn/${wData.weather[0].icon}@2x.png`);
+                $("#icon").attr("src", `./images/weather/${wData.weather[0].icon}.png`);
                 var temp = wData.main.temp;
                 $("#tempc").text(Math.round(temp));
                 $("#tempf").text(Math.round(temp * 1.8 + 32));
