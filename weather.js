@@ -7,7 +7,7 @@ async function getIP() {
 
 async function getLocation(ip) {
     var key = "1ece34d190c35adb6225523b6059e5bf";
-    var response = await fetch(`http://api.ipstack.com/${ip.ip}?access_key=${key}`);
+    var response = await fetch(`https://api.ipstack.com/${ip.ip}?access_key=${key}`);
     var data = await response.json();
     return data;
 }
