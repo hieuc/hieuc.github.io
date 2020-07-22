@@ -6,15 +6,14 @@ async function getIP() {
 }
 
 async function getLocation(ip) {
-    var key = "1ece34d190c35adb6225523b6059e5bf";
-    var response = await fetch(`https://api.ipstack.com/${ip.ip}?access_key=${key}`);
+    var response = await fetch(`https://ipapi.co/${ip.ip}/json/`);
     var data = await response.json();
     return data;
 }
 
 async function getWeatherData(location) {
     var key = "e04ce75969c48da6f29a8e34552e31b3";
-    var response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${location.zip},${location.country_code}&appid=${key}&units=metric`);
+    var response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${location.postal},${location.country_code}&appid=${key}&units=metric`);
     var data = await response.json();
     return data;
 }
