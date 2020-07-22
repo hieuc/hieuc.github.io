@@ -1,14 +1,13 @@
 // async functions to get requests
-async function getIP() {
-    var response = await fetch("https://api.ipify.org/?format=json");
-    var data = await response.json();
-    return data;
-}
 
-async function getLocation(ip) {
-    var response = await fetch(`https://ipapi.co/${ip.ip}/json/`);
-    var data = await response.json();
-    return data;
+async function getLocation() {
+    try {
+        var response = await fetch(`https://ipapi.co/json/`);
+        var data = await response.json();
+        return data;
+    } catch (e) {
+        $("#container").text("adblock :(");
+    }
 }
 
 async function getWeatherData(location) {
@@ -31,48 +30,48 @@ var wData;
 
 
 // making requests
-getIP().then(zip => {
-    getLocation(zip).then(location => {
-        getWeatherData(location).then(data => {
-            wData = data;
-            // update document when loaded
-            $(document).ready( function() {
-                $("#time").html(timeString);
-                $("#city").text(location.city);
-                $("#weather-status").text(wData.weather[0].main);
-                $("#icon").attr("src", `./images/weather/${wData.weather[0].icon}.png`);
-                var temp = wData.main.temp;
-                $("#tempc").text(Math.round(temp));
-                $("#tempf").text(Math.round(temp * 1.8 + 32));
-                $("#hum").text(`Humidity: ${wData.main.humidity}%`);
-                $("#wind").text(`Wind: ${(wData.wind.speed*3.6).toFixed(2)} km/h`);
-
-                // action listeners to switch units
-                $("#f").click(function() {
-                    // hide celcius temp
-                    $("#tempc").css("display", "none");
-                    // disable fahrenheit option
-                    $(this).addClass("disabled");
-                    // display fahrenheit temp
-                    $("#tempf").css("display", "inline");
-                    // make other option available
-                    $("#c").removeClass("disabled");
-                    // update wind speed
-                    $("#wind").text(`Wind: ${(wData.wind.speed*2.237).toFixed(2)} mph`);
-                });
-                $("#c").click(function() {
-                    // hide fahrenheit temp
-                    $("#tempf").css("display", "none")
-                    // disable celcius option
-                    $(this).addClass("disabled");
-                    // display celcius temp
-                    $("#tempc").css("display", "inline");
-                    // make other option available
-                    $("#f").removeClass("disabled");
-                    // update wind speed
+    getLocation().then(location => {
+        if (location) {
+            getWeatherData(location).then(data => {
+                wData = data;
+                // update document when loaded
+                $(document).ready( function() {
+                    $("#time").html(timeString);
+                    $("#city").text(location.city);
+                    $("#weather-status").text(wData.weather[0].main);
+                    $("#icon").attr("src", `./images/weather/${wData.weather[0].icon}.png`);
+                    var temp = wData.main.temp;
+                    $("#tempc").text(Math.round(temp));
+                    $("#tempf").text(Math.round(temp * 1.8 + 32));
+                    $("#hum").text(`Humidity: ${wData.main.humidity}%`);
                     $("#wind").text(`Wind: ${(wData.wind.speed*3.6).toFixed(2)} km/h`);
+
+                    // action listeners to switch units
+                    $("#f").click(function() {
+                        // hide celcius temp
+                        $("#tempc").css("display", "none");
+                        // disable fahrenheit option
+                        $(this).addClass("disabled");
+                        // display fahrenheit temp
+                        $("#tempf").css("display", "inline");
+                        // make other option available
+                        $("#c").removeClass("disabled");
+                        // update wind speed
+                        $("#wind").text(`Wind: ${(wData.wind.speed*2.237).toFixed(2)} mph`);
+                    });
+                    $("#c").click(function() {
+                        // hide fahrenheit temp
+                        $("#tempf").css("display", "none")
+                        // disable celcius option
+                        $(this).addClass("disabled");
+                        // display celcius temp
+                        $("#tempc").css("display", "inline");
+                        // make other option available
+                        $("#f").removeClass("disabled");
+                        // update wind speed
+                        $("#wind").text(`Wind: ${(wData.wind.speed*3.6).toFixed(2)} km/h`);
+                    });
                 });
             });
-        });
+        }
     });
-});
