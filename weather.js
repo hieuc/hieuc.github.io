@@ -19,8 +19,8 @@ async function getWeatherData(location) {
 
 // global variables for time setup
 var current = new Date();
-var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-var day = days[current.getDay() - 1];
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var day = days[current.getDay()];
 var hour = current.getHours();
 var minute = current.getMinutes();
 var dn = ["AM", "PM"];
