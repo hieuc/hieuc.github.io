@@ -8,34 +8,35 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script lang="javascript" type="text/javascript" src="./logic.js"></script>
+    <script lang="javascript" type="text/javascript" src="./board.js"></script>
     <title>Pentagoes</title>
 </head>
 <body>
     <center>
-        <svg class="board" width="600" height="600">
+        <svg class="board" width="600" height="550">
             <g class="rotate-options">
-                <a href="#" onclick="rotateCW('03')">
+                <a href="#" onclick="rotateP(5)">
                     <image class="arrow" xlink:href="./arrows/left-cw.png" width="150" height="50" x=75 y=500></image>
                 </a>
-                <a href="#" onclick="rotateCCW('01')">
+                <a href="#" onclick="rotateP(2)">
                     <image class="arrow" xlink:href="./arrows/left-ccw.png" width="150" height="50" x=75 y=50></image>
                 </a>
-                <a href="#" onclick="rotateCCW('02')">
+                <a href="#" onclick="rotateP(4)">
                     <image class="arrow" xlink:href="./arrows/up-ccw.png" width="50" height="150" x=500 y=75></image>
                 </a>
-                <a href="#" onclick="rotateCW('02')">
+                <a href="#" onclick="rotateP(3)">
                     <image class="arrow" xlink:href="./arrows/right-cw.png" width="150" height="50" x=380 y=50></image>
                 </a>
-                <a href="#" onclick="rotateCCW('04')">
+                <a href="#" onclick="rotateP(8)">
                     <image class="arrow" xlink:href="./arrows/right-ccw.png" width="150" height="50" x=380 y=500></image>
                 </a>
-                <a href="#" onclick="rotateCW('01')">
+                <a href="#" onclick="rotateP(1)">
                     <image class="arrow" xlink:href="./arrows/up-cw.png" width="50" height="150" x=50 y=75></image>
                 </a>
-                <a href="#" onclick="rotateCW('04')">
+                <a href="#" onclick="rotateP(7)">
                     <image class="arrow" xlink:href="./arrows/down-cw.png" width="50" height="150" x=500 y=375></image>
                 </a>
-                <a href="#" onclick="rotateCCW('03')">
+                <a href="#" onclick="rotateP(6)">
                     <image class="arrow" xlink:href="./arrows/down-ccw.png" width="50" height="150" x=50 y =375></image>
                 </a>
             </g>
@@ -43,9 +44,29 @@
         <div id="status">
             
         </div>
-        <br>
+        <div>player controls BLACK, computer controls WHITE</div>
         <div>
             <button onclick="reset()">reset</button>
+        </div>
+        <div>
+            <label for="mode">Mode: </label>
+            <select name="mode" id="mode">
+                <option value="1">Minimax</option>
+                <option value="2" selected>Alpha-beta</option>
+            </select>
+            <button onclick="updateInfo()">Update</button>
+        </div>
+        <div>
+            <label for="depth">Depth: </label>
+            <select name="depth" id="depth">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+            </select>
+            <button onclick="updateInfo()">Update</button>
+        </div>
+        <div>
+            Nodes expanded: <span id="expanded"></span>
         </div>
     </center>
     <script lang="javascript" type="text/javascript" src="./main.js"></script>

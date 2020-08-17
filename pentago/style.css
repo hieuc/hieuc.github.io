@@ -41,4 +41,7 @@ circle {
     transform: scale(1.01)
 }
 
+div {
+    margin: 5px;
+}
 
