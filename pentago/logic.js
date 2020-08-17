@@ -67,7 +67,7 @@ class AI {
         var move = this.makeDecision(board);
         var position = move.split(" ")[0];
         var rotation = move.split(" ")[1];
-        console.log(this.expanded);
+        console.log(move);
         $("#expanded").html(this.expanded);
         switchTurn($(`#${position}`)[0]);
         rotate(rotation);
@@ -221,21 +221,21 @@ class AI {
 
         // prioritize consecutive blocks
         // rewards winning moves
+        
         for (var i = 0; i < board.length; i++) {
             var turn = (board[i] === "white") ? 1 : -1;
             var bd = checkBackwardDiagonal(board, i);
             var fd = checkForwardDiagonal(board, i);
             var h = checkHorizontal(board, i);
             var v = checkVertical(board, i);
-            if (bd === 5 || fd === 5 || h === 5 || v === 5)
-                return Number.MAX_SAFE_INTEGER * turn;
             
-            value += Math.pow(bd, 2) * turn;
-            value += Math.pow(fd, 2) * turn;
-            value += Math.pow(h, 2) * turn;
-            value += Math.pow(v, 2) * turn;
+            value += Math.pow(bd === 5 ? 1000 : bd, 5) * turn;
+            value += Math.pow(fd === 5 ? 1000 : fd, 5) * turn;
+            value += Math.pow(h === 5 ? 1000 : h, 5) * turn;
+            value += Math.pow(v === 5 ? 1000 : v, 5) * turn;
             
         }
+
 
         // check for available spaces
         value += this.checkWinsAvailable(board);
@@ -278,7 +278,7 @@ class AI {
      */
     checkWinsAvailable(board) {
         var sum = 0;
-        var reward = 20;
+        var reward = 50;
         var p = [];
         // check horizontal
         for (var i = 0; i < 6; i++) {

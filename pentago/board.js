@@ -215,68 +215,80 @@ function checkWin(board) {
 
 function checkHorizontal(board, index) {
     var current = board[index];
-    var stack = 1;
+    var stack = [];
     if (current === "empty")
-        return stack;
-    for (var i = 1; i < 5; i++) {
-        if (Math.floor((index + i) / 6) > Math.floor(index / 6))
+        return 1;
+    for (var i = 0; i < 5; i++) {
+        if (i < 4 && Math.floor((index + i) / 6) > Math.floor(index / 6))
             break;
-        if (board[index + i] !== current)
-            break;
-        stack++;
+        stack.push(board[index + i]);
     }
-    return stack;
+    // if more than 1 player presents in 5 consecutive, not worth exploring
+    if ([...new Set(stack)].filter(e => e !== "empty").length > 1) {
+        return 1;
+    } 
+    return stack.filter(e => e === current).length;
 }
 
 function checkVertical(board, index) {
     var current = board[index];
-    var stack = 1;
+    var stack = [];
     if (current === "empty")
-        return stack;
-    for (var i = 1; i < 5; i++) {
+        return 1;
+    for (var i = 0; i < 5; i++) {
         if (index + i * 6 > board.length)
             break;
-        if (board[index + i * 6] !== current)
-            break;
-        stack++;
+        stack.push(board[index + i * 6]);
     }
-    return stack;
+    // if more than 1 player presents in 5 consecutive, not worth exploring
+    if ([...new Set(stack)].filter(e => e !== "empty").length > 1) {
+        return 1;
+    } 
+    return stack.filter(e => e === current).length;
 }
 
 function checkForwardDiagonal(board, index) {
     var current = board[index];
-    var stack = 1;
+    var stack = [];
     if (current === "empty")
-        return stack;
-    for (var i = 1; i < 5; i++) {
+        return 1;
+    for (var i = 0; i < 5; i++) {
         if (index + i * 7 > board.length)
             break;
-        if (board[index + i * 7] !== current)
-            break;
+        
         // diagonal must be in consecutive lines
-        if (Math.floor((index + i*7)/6) - Math.floor((index + (i-1)*7)/6) !== 1)
+        if (i > 0 && Math.floor((index + i*7)/6) - Math.floor((index + (i-1)*7)/6) !== 1)
             break;
-        stack++;
+
+        stack.push(board[index + i * 7]);
     }
-    return stack;
+    // if more than 1 player presents in 5 consecutive, not worth exploring
+    if ([...new Set(stack)].filter(e => e !== "empty").length > 1) {
+        return 1;
+    } 
+    return stack.filter(e => e === current).length;
 }
 
 function checkBackwardDiagonal(board, index) {
     var current = board[index];
-    var stack = 1;
+    var stack = [];
     if (current === "empty")
-        return stack;
-    for (var i = 1; i < 5; i++) {  
+        return 1;
+    for (var i = 0; i < 5; i++) {  
         if (index + i * 5 > board.length)
             break;
-        if (board[index + i * 5] !== current)
-            break;
+
         // diagonal must be in consecutive lines
-        if (Math.floor((index + i*5)/6) - Math.floor((index + (i-1)*5)/6) !== 1)
+        if (i > 0 && Math.floor((index + i*5)/6) - Math.floor((index + (i-1)*5)/6) !== 1)
             break;
-        stack++;
+
+        stack.push(board[index + i * 5]);
     }
-    return stack;
+    // if more than 1 player presents in 5 consecutive, not worth exploring
+    if ([...new Set(stack)].filter(e => e !== "empty").length > 1) {
+        return 1;
+    } 
+    return stack.filter(e => e === current).length;
 }
 
  /**
