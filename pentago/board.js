@@ -57,7 +57,7 @@ function switchTurn(e) {
 function rotateP(rotation) {
     rotate(rotation);
     
-    if (!gameEnd) {
+    if (!manual & !gameEnd) {
         window.setTimeout(function () {
             bot.move(board);
         }, 510);
@@ -159,7 +159,7 @@ function reset() {
     makeQuadrants();
     $(".rotate-options").css("display", "none");
     $("svg").html($("svg").html());
-    if (turn === "white") {
+    if (turn === "white" && !manual) {
         bot.move(board);
     }
 }
@@ -219,7 +219,8 @@ function checkHorizontal(board, index) {
     if (current === "empty")
         return 1;
     for (var i = 0; i < 5; i++) {
-        if (i < 4 && Math.floor((index + i) / 6) > Math.floor(index / 6))
+        // horizontal should be in the same line
+        if (Math.floor((index + i) / 6) > Math.floor(index / 6))
             break;
         stack.push(board[index + i]);
     }

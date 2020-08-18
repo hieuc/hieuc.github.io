@@ -49,6 +49,10 @@
             <button onclick="reset()">reset</button>
         </div>
         <div>
+            <input type="checkbox" id="manual" name="manual" onchange="manual = this.checked">
+            <label for="manual">Manual mode</label>
+        </div>
+        <div>
             <label for="mode">Mode: </label>
             <select name="mode" id="mode">
                 <option value="1">Minimax</option>
