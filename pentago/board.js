@@ -217,7 +217,7 @@ function checkHorizontal(board, index) {
     var current = board[index];
     var stack = [];
     if (current === "empty")
-        return 1;
+        return 0;
     for (var i = 0; i < 5; i++) {
         // horizontal should be in the same line
         if (Math.floor((index + i) / 6) > Math.floor(index / 6))
@@ -235,7 +235,7 @@ function checkVertical(board, index) {
     var current = board[index];
     var stack = [];
     if (current === "empty")
-        return 1;
+        return 0;
     for (var i = 0; i < 5; i++) {
         if (index + i * 6 > board.length)
             break;
@@ -252,7 +252,7 @@ function checkForwardDiagonal(board, index) {
     var current = board[index];
     var stack = [];
     if (current === "empty")
-        return 1;
+        return 0;
     for (var i = 0; i < 5; i++) {
         if (index + i * 7 > board.length)
             break;
@@ -274,7 +274,7 @@ function checkBackwardDiagonal(board, index) {
     var current = board[index];
     var stack = [];
     if (current === "empty")
-        return 1;
+        return 0;
     for (var i = 0; i < 5; i++) {  
         if (index + i * 5 > board.length)
             break;
