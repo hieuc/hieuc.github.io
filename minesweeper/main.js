@@ -399,8 +399,11 @@ function makeComputedMoves() {
     }
 
     var matrix = matrixRREF(equations[1]);
+    //console.log(equations[1]);
     //console.log(matrix);
+    
     var changed = false;
+    
     try {
         for (var i = 0; i < matrix.length; i++) {
             var row = matrix[i];
@@ -438,6 +441,7 @@ function makeComputedMoves() {
         console.log(e);
         return [changed, equations[0], matrix, edges];
     }
+    
     return [changed, equations[0], matrix, edges];
 }
 
@@ -567,7 +571,7 @@ function guess(auto) {
                     for (var i = 0; i < positions.length; i++) {
                         var e = $("#" + positions[i]);
                         e.css("box-shadow", `inset 0 0 0 ${ p[i] === min || p[i] === 1 ? 3 : 1.2}px ${getColor(p[i])}`);
-                        e.attr("title", `${p[i].toFixed(5) * 100}%`)
+                        e.attr("title", `${Number(p[i] * 100).toFixed(3)}%`)
                         highlighted.push(e);
                     }
 

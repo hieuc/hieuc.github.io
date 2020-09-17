@@ -199,3 +199,26 @@
 body {
     background-color: azure;
 }
+
+figcaption {
+    color: gray;
+    font-style: italic;
+    margin: 5px;
+}
+
+#accordion {
+    margin-top: 20px;
+}
+
+.card-header > h5 > button {
+    font-weight: bold;
+}
+
+figure {
+    margin: 5px;
+    text-align: center;
+}
+
+.card {
+    background-color: #f6f6ff
+}

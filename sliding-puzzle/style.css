@@ -1,9 +1,4 @@
-body {
-    margin: 20px;
-    overflow: scroll;
-    height: auto;
-    background-color: #f2f6ff;
-}
+
 
 table {
     border-collapse: collapse;
@@ -28,10 +23,6 @@ tr:hover {
     background-color: #fff6e3;
 }
 
-div {
-    margin: 10px;
-}
-
 #start {
     padding: 10px;
     background-color: burlywood;
@@ -49,4 +40,8 @@ div {
 #reset-table {
     padding: 10px;
     margin-left: 10px;
+}
+
+#container div {
+    margin: 10px;
 }

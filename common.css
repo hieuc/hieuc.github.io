@@ -1,0 +1,12 @@
+body {
+  height: inherit;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30px;
+  background-color: azure;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+

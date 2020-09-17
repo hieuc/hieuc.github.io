@@ -8,7 +8,7 @@ var attempt = 1;
 function setup() {
     var c = createCanvas(unit * 4, unit * 4);
     c.parent("canvas");
-    c.position(Math.min(window.innerWidth/4, 200), 50);
+    c.position(Math.min(window.innerWidth/4, 300), 120);
     document.getElementById("board-string").value = board.currentState;
     document.getElementById("fringe-limit").value = fringeLimit;
 }
