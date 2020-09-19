@@ -8,7 +8,7 @@ var mineRemain = mineNum;
 var gameover = false;
 var board;
 var time;
-var timer;
+var timer = null;
 var flagged = [];
 var known = [];
 var highlighted = [];
@@ -18,6 +18,42 @@ var win = 0;
 var loss = 0;
 
 buildBoard();
+$("#custom").change(() => {
+    var value = $("#custom").val();
+    if (value === "easy") {
+        updateInput(9, 9, 10);
+    } else if (value === "medium") {
+        updateInput(16, 16, 40);
+    } else if (value === "hard") {
+        updateInput(16, 30, 99);
+    } else {
+        $("#h-input").attr("disabled", null);
+        $("#w-input").attr("disabled", null);
+        $("#m-input").attr("disabled", null);
+    }
+});
+$("#custom").trigger("change");
+
+function updateInput(h, w, m) {
+    var hbox =  $("#h-input");
+    var wbox =  $("#w-input");
+    var mbox =  $("#m-input");
+    hbox.val(h);
+    wbox.val(w);
+    mbox.val(m);
+    hbox.attr("disabled",  "");
+    wbox.attr("disabled", "");
+    mbox.attr("disabled", "");
+    hbox.trigger("input");
+}
+
+function updateP() {
+    var pbox =  $("#p-input");
+    var h =  $("#h-input").val();
+    var w =  $("#w-input").val();
+    var m =  $("#m-input").val();
+    pbox.val(Number(m/(h*w)*100).toFixed(2));
+}
 
 //------------------------------------Front-end-----------------------------------------
 function buildBoard() {
@@ -619,6 +655,26 @@ function clearHighlighted() {
     highlighted = [];
 }
 
+function updateBoardSize() {
+    var heightCap = 30;
+    var widthCap = 50;
+    var width = $("#w-input").val();
+    var height = $("#h-input").val();
+    var mines = $("#m-input").val();
+
+    reset();
+    bWidth = Math.min(width, widthCap);
+    bWidth = Math.max(width, 8);
+    bHeight = Math.min(height, heightCap);
+    bHeight = Math.max(height, 8);
+    
+    mineNum = Math.min(bWidth * bHeight, mines);
+    bpxWidth = 20 + bWidth * 16;
+    bpxHeight = 30 + 32 + bHeight * 16;
+    smileyMargin = (bpxWidth - 13 * 8 - 30) / 2; 
+    buildBoard();
+}
+
 //----------------------------------Calculations-helpers-------------------------------------
 
 function getEdgeTiles() {
@@ -943,7 +999,7 @@ function auto() {
     if (!gameover) {
         setTimeout(() => {
             auto();
-        }, 5);
+        }, 50);
     } else {
         count++;
         if ($("#smiley").attr("class").toString().includes("victory")) {

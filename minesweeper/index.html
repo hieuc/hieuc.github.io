@@ -43,10 +43,51 @@
             <div class="field">
             </div>
         </div>
-        <div>
-            <br>
+        <div id="customize-container">
+          <div id="actions">
             <button id="cheat" onclick="guess()">cheat</button>
             <button onclick="clearHighlighted()">clear highlight</button>
+            <button onclick="auto()">auto</button>
+          </div>
+          <div id="size-customize">
+            <table cellpadding=3 style="display:table">
+              <tbody>
+                <tr>
+                  <td>Difficulty</td>
+                  <td>Height</td>
+                  <td>Width</td>
+                  <td>Mines</td>
+                  <td>Mines %</td>
+                </tr>
+                <tr>
+                  <td>
+                    <select id="custom">
+                      <option value="easy">Easy</option>
+                      <option value="medium">Medium</option>
+                      <option value="hard" selected="true">Hard</option>
+                      <option>Custom</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="number" id="h-input" oninput="updateP()">
+                  </td>
+                  <td>
+                    <input type="number" id="w-input" oninput="updateP()">
+                  </td>
+                  <td>
+                    <input type="number" id="m-input" oninput="updateP()">
+                  </td>
+                  <td>
+                    <input type="number" id="p-input" disabled>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="color: gray; font-style: italic; margin: 5px">
+              (Range - height: 8-30, width: 8-50)
+            </div>
+            <button onclick="updateBoardSize()">Update</button>
+          </div>
         </div>
     </center>
 
@@ -199,7 +240,7 @@
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
-                I ran the game 20,000 times where the tiles with least mine probability are prioritized. The average winrate was around <b>22.375%</b> 
+                I ran the game in hard difficulty (16x30 board, 99 mines) 20,000 times where the tiles with least mine probability are prioritized. The average winrate was around <b>22.375%</b> 
                 <figure>
                     <img src="./images/result.png">
                 </figure>

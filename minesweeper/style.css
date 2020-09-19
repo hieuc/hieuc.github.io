@@ -222,3 +222,38 @@ figure {
 .card {
     background-color: #f6f6ff
 }
+
+#customize-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+#customize-container button:hover {
+    background-color: bisque;
+}
+
+#actions {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 60px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+td {
+    text-align: center;
+}
