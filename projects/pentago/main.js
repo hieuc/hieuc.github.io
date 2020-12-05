@@ -12,6 +12,9 @@ var bot = new AI(AIDepth);
 var mode = 2; // 1 for minimax, 2 for alpha beta
 var manual = false;
 
-makeQuadrants();
-$(".rotate-options").css("display", "none");
-$("body").html($("body").html());
+function startPage() {
+    makeQuadrants();
+    $(".rotate-options").css("display", "none");
+    $("body").html($("body").html());
+}
+
