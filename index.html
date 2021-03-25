@@ -1,84 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <!-- Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="common.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+<head>
+  <!-- Meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script lang="javascript" type="text/javascript" src="./other-programs/weather/weather.js"></script>
-    <script lang="javascript" type="text/javascript" src="./main.js"></script>
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>memes</title>
-  </head>
+  <!-- Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="common.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="./images/duckerz.gif">Home</a> 
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Projects
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="./projects/pentago/">Pentago</a>
-              <a class="dropdown-item" href="./projects/minesweeper/">Minesweeper</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Useless programs
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="./other-programs/balls/">Balls</a>
-              <a class="dropdown-item" href="./other-programs/dots/">Dots</a>
-              <a class="dropdown-item" href="./other-programs/snek/">Snake</a>
-              <a class="dropdown-item" href="./other-programs/sliding-puzzle/">Sliding Puzzle</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <!--<script lang="javascript" type="text/javascript" src="./other-programs/weather/weather.js"></script>-->
+  <script lang="javascript" type="text/javascript" src="./main.js"></script>
 
-    <div id="container">
-      <h1 id="city"></h1>
-      <h2 id="time"></h2>
-      <h2 id="weather-status"></h2>
-      <img src="" alt="" id="icon">
-      <div style="display:none" id="tempf"></div>
-      <div id="tempc"></div>
-      <div id="units">
-          <a href="#" id="f">&#8457</a>|
-          <a href="#" id="c" class="disabled">&#8451</a>
-      </div>
-      <div id="extra">
-          <div id="hum"></div>
-          <div id="wind"></div>
-      </div>
+  <title>memes</title>
+</head>
+
+<body>
+  <!-- Top nav bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark center">
+    <div class="navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./images/duckerz.gif">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#projects">
+            Projects
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Useless programs
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="./other-programs/balls/">Balls</a>
+            <a class="dropdown-item" href="./other-programs/dots/">Dots</a>
+            <a class="dropdown-item" href="./other-programs/snek/">Snake</a>
+            <a class="dropdown-item" href="./other-programs/sliding-puzzle/">Sliding Puzzle</a>
+            <a class="dropdown-item" href="./other-programs/pentago/">Pentago</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">Photos</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="pageHeader">
+    <div class="headerText">
+      <h1>Hieu "Victor" Chau</h1>
+    </div>
   </div>
 
-    <div class="widepeepo-container">
-      <input type="image" src="./images/wide.png" id="wide" class="emote widepeepoHappy" onclick="clicky()">
-      <!-- Audio: Jack Stauber - Buttercup (Earthbound/Chiptune Cover) -->
-    </div>    
+  <section id="about">
+    <div class="container"> 
+      <h2>About</h2>
+      <div class="row">
+        <p >
+          My name is Hieu, but you can refer me as Victor. I am a senior student at University of Washington Tacoma persuing a B.S. in Computer Science and Systems while working as a Research Assistant.
+          <br>
+          My general interest: automation.
+          <br>
+          <br>
+          Below is some of my work.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <h1>This is my testing ground.</h1>
-    <p>Everything is WIP.</p>
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="row">
+        <div class="col-lg-6 d-flex align-items-stretch">
+          <div class="card">
+            <img class="card-img-top" src="./images/fusillade.gif" >
+            <div class="card-body">
+              <div class="card-title">
+                Fusillade
+              </div>
+              <div class="second-title">
+                Javascript
+              </div>
+              <p class="card-text">
+                A bullet-hell/adventure game for my Computational Worlds class.
+              </p>
+            </div>
+            <div>
+              <a class="btn" href="https://www.youtube.com/watch?v=Amcvsrs9N2Q">Trailer</a>
+              <a class="btn" href="./Fusillade">Deployment</a> 
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-stretch">
+          <div class="card">
+            <img class="card-img-top" src="./images/posture-monitor.png">
+            <div class="card-body">
+              <div class="card-title">
+                Posture Monitor
+              </div>
+              <div class="second-title">
+                Raspberry Pi, Node-RED, Javascript, SQL
+              </div>
+              <p class="card-text">
+                An IoT system that detects if your posture is poor and warns you with an annoying buzzer.
+              </p>
+            </div>
+            <div>
+              <a class="btn" href="https://youtu.be/7d7a3459X8k">Demo</a>
+              <a class="btn" href="./files/posture-monitor-report.pdf">Full Report</a> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6 d-flex align-items-stretch">
+          <div class="card">
+            <img class="card-img-top" src="./images/chat-app.png" >
+            <div class="card-body">
+              <div class="card-title">
+                Android Group Chat
+              </div>
+              <div class="second-title">
+                Java, Node.js, SQL
+              </div>
+              <p class="card-text">
+                Just an Android Chat Application with contacts, messaging, and weather. But our product was certified by the professor to be an example for future courses.
+              </p>
+            </div>
+            <div>
+              <a class="btn" style="width: 100%;" href="https://drive.google.com/file/d/1kh-vuQFGDvFCR-IvdrzY9s-qkT3H9YfG/view">Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-stretch">
+          <div class="card">
+            <img class="card-img-top" src="./images/minesweeper.gif">
+            <div class="card-body">
+              <div class="card-title">
+                Probability Minesweeper
+              </div>
+              <div class="second-title">
+                Javascript, HTML, CSS
+              </div>
+              <p class="card-text">
+                The Windows XP Minesweeper, with some algorithms to guess the best next moves.
+              </p>
+            </div>
+            <div>
+              <a class="btn" style="width: 100%;" href="./projects/minesweeper/">Deployment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h3>Featured: <a href="./minesweeper/index.html">Minesweeper</a></h3>
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-  </body>
+  <div class="widepeepo-container">
+    <input type="image" src="./images/wide.png" id="wide" class="emote widepeepoHappy" onclick="clicky()">
+    <!-- Audio: Jack Stauber - Buttercup (Earthbound/Chiptune Cover) -->
+  </div>
+
+  
+  <section id="contacts">
+    WIP right here
+  </section>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
