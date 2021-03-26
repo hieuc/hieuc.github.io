@@ -14,9 +14,7 @@
   <link rel="stylesheet" type="text/css" href="../common.css">
   <link rel="stylesheet" type="text/css" href="./styles.css">
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -43,11 +41,11 @@
             Useless programs
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="./other-programs/balls/">Balls</a>
-            <a class="dropdown-item" href="./other-programs/dots/">Dots</a>
-            <a class="dropdown-item" href="./other-programs/snek/">Snake</a>
-            <a class="dropdown-item" href="./other-programs/sliding-puzzle/">Sliding Puzzle</a>
-            <a class="dropdown-item" href="./other-programs/pentago/">Pentago</a>
+            <a class="dropdown-item" href="../other-programs/balls/">Balls</a>
+            <a class="dropdown-item" href="../other-programs/dots/">Dots</a>
+            <a class="dropdown-item" href="../other-programs/snek/">Snake</a>
+            <a class="dropdown-item" href="../other-programs/sliding-puzzle/">Sliding Puzzle</a>
+            <a class="dropdown-item" href="../other-programs/pentago/">Pentago</a>
           </div>
         </li>
         <li class="nav-item active">
@@ -60,19 +58,40 @@
     </div>
   </nav>
 
-  <script>
-    getLink().then(e=> {
-        console.log(e);
-    });
+  
 
-    async function getLink() {
-        try {
-            var response = await fetch(`https://500px.com/nonehasname/rss`);
-            return response;
-        } catch (e) {
-            console.log(e);
+  <div id="photos-container">
+    <div id="description">
+        This is some of the photos I took and edited for fun, uploaded to 500px.
+    </div>
+
+  </div>
+
+  <script>
+    $.ajax({
+        type: "GET",
+        contentType: "application/xml; charset=utf-8",
+        url: "https://500px.com/nonehasname/rss",
+        success: function (data) {
+            console.log(data);
+            var items = $(data).find("item description").toArray();
+            items.forEach(e => {
+                var cdata = e.innerHTML.toString().replace("<![CDATA[", "").replace("\n", "");
+                var photo = $(cdata).find("a").prevObject[0];
+                // make image open in new tab
+                $(photo).attr("target", "_blank");
+
+                var title = $(cdata).find("a")[0].innerHTML;
+                $(photo).attr("title", title);
+
+                $("#photos-container").append(photo);
+            });
+             
+        },
+        error: function (xmlhttprequest, textstatus, errorthrown) {
+            console.log("Server Error");
         }
-    }
+    });
   </script>
  
 
