@@ -73,7 +73,6 @@
         contentType: "application/xml; charset=utf-8",
         url: "https://500px.com/nonehasname/rss",
         success: function (data) {
-            console.log(data);
             var items = $(data).find("item description").toArray();
             items.forEach(e => {
                 var cdata = e.innerHTML.toString().replace("<![CDATA[", "").replace("\n", "");
@@ -84,7 +83,7 @@
                 var title = $(cdata).find("a")[0].innerHTML;
                 $(photo).attr("title", title);
 
-                $("#photos-container").append(photo);
+                $(photo).hide().appendTo("#photos-container").fadeIn(500);
             });
              
         },
