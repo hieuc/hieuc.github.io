@@ -125,3 +125,14 @@ span {
 .list-inline li a:hover {
   color: #4c00cc;
 }
+
+#other-programs {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#op-description {
+  text-align:left;
+  font-size: 15px;
+}

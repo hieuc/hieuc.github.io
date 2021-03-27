@@ -48,23 +48,10 @@
         <li class="nav-item active">
           <a class="nav-link" href="./images/duckerz.gif">Home</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
           <a class="nav-link" href="#projects">
             Projects
           </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Useless programs
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="./other-programs/balls/">Balls</a>
-            <a class="dropdown-item" href="./other-programs/dots/">Dots</a>
-            <a class="dropdown-item" href="./other-programs/snek/">Snake</a>
-            <a class="dropdown-item" href="./other-programs/sliding-puzzle/">Sliding Puzzle</a>
-            <a class="dropdown-item" href="./other-programs/pentago/">Pentago</a>
-          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./photos/">Photos</a>
@@ -79,7 +66,7 @@
   <div class="pageHeader">
     <div class="headerText">
       <h1>Hieu Chau</h1>
-      <h3>Developer | Programmer</h3>
+      <h3>Software Engineer</h3>
     </div>
   </div>
 
@@ -94,7 +81,7 @@
           My general interest: automation.
           <br>
           <br>
-          <a href="./files/resume.pdf">My resume</a> <br>
+          <a href="./files/resume.pdf" target="_blank">My resume</a> <br>
           Below is some of my work.
         </p>
       </div>
@@ -111,6 +98,7 @@
             <div class="card-body">
               <div class="card-title">
                 Fusillade
+                <a href="https://github.com/hieuc/Fusillade" target="_blank" target="_blank"><i class="fa fa-github"></i></a>
               </div>
               <div class="second-title">
                 Javascript
@@ -120,8 +108,8 @@
               </p>
             </div>
             <div>
-              <a class="btn" href="https://www.youtube.com/watch?v=Amcvsrs9N2Q">Trailer</a>
-              <a class="btn" href="./Fusillade">Deployment</a> 
+              <a class="btn" href="https://www.youtube.com/watch?v=Amcvsrs9N2Q" target="_blank">Trailer</a>
+              <a class="btn" href="./Fusillade" target="_blank">Deployment</a> 
             </div>
           </div>
         </div>
@@ -140,8 +128,8 @@
               </p>
             </div>
             <div>
-              <a class="btn" href="https://youtu.be/7d7a3459X8k">Demo</a>
-              <a class="btn" href="./files/posture-monitor-report.pdf">Full Report</a> 
+              <a class="btn" href="https://youtu.be/7d7a3459X8k" target="_blank">Demo</a>
+              <a class="btn" href="./files/posture-monitor-report.pdf" target="_blank">Full Report</a> 
             </div>
           </div>
         </div>
@@ -159,11 +147,11 @@
                 Java, Node.js, SQL
               </div>
               <p class="card-text">
-                Just an Android Chat Application with contacts, messaging, and weather. But our product was certified by the professor to be an example for future courses.
+                An Android Chat Application with contacts, messaging, and weather. Our product was certified by the professor to be an example for future courses.
               </p>
             </div>
             <div>
-              <a class="btn" style="width: 100%;" href="https://drive.google.com/file/d/1kh-vuQFGDvFCR-IvdrzY9s-qkT3H9YfG/view">Demo</a>
+              <a class="btn" style="width: 100%;" target="_blank" href="https://drive.google.com/file/d/1kh-vuQFGDvFCR-IvdrzY9s-qkT3H9YfG/view">Demo</a>
             </div>
           </div>
         </div>
@@ -173,6 +161,7 @@
             <div class="card-body">
               <div class="card-title">
                 Probability Minesweeper
+                <a href="https://github.com/hieuc/hieuc.github.io/tree/master/projects/minesweeper" target="_blank"><i class="fa fa-github"></i></a>
               </div>
               <div class="second-title">
                 Javascript, HTML, CSS
@@ -182,14 +171,52 @@
               </p>
             </div>
             <div>
-              <a class="btn" style="width: 100%;" href="./projects/minesweeper/">Deployment</a>
+              <a class="btn" style="width: 100%;" target="_blank" href="./projects/minesweeper/">Deployment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card" id="other-programs">
+            <div class="card-body">
+              <div class="card-title">
+                Other programs
+              </div>
+              <p class="card-text">
+                Other smaller programs that I made in the past.
+              </p>
+              <div class="row">
+                <div class="col-lg-4" style="border-right: solid 1px gray;">
+                  <select class="form-select" id="op-select">
+                    <option value=1>Balls</option>
+                    <option value=2>Dots</option>
+                    <option value=3>Snake</option>
+                    <option value=4>Sliding Puzzle</option>
+                    <option value=5 selected>Pentago</option>
+                  </select>
+                  <div>
+                    <br>
+                    <a id="op-git-links" target="_blank" href="#"><i class="fa fa-github fa-2x"></i></a>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <p id="op-description">
+  
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <a class="btn" id="op-deploy" target="_blank" style="width: 100%;">Deployment</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
   
   <section id="contacts">
     <div id="container">
@@ -202,17 +229,17 @@
           </a>
         </li>
         <li>
-          <a href="./files/resume.pdf" title="Resume">
+          <a href="./files/resume.pdf" target="_blank" title="Resume">
             <i class="fa fa-file fa-3x"></i>
           </a>
         </li>
         <li>
-          <a href="https://github.com/hieuc" title="Github">
+          <a href="https://github.com/hieuc" target="_blank" title="Github">
             <i class="fa fa-github fa-3x"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/hieu-chau-5aa0a51a8/" title="Linkedin">
+          <a href="https://www.linkedin.com/in/hieu-chau-5aa0a51a8/" target="_blank" title="Linkedin">
             <i class="fa fa-linkedin-square fa-3x"></i>
           </a>
         </li>
