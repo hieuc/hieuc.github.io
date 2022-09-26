@@ -1,0 +1,85 @@
+// https://css-tricks.com/responsive-layouts-fewer-media-queries/
+
+#projects-container {
+    width: 80%;
+    /* first breakpoint*/
+    --w1:1600px;
+    --n:3;
+    /* second breakpoint*/
+    --w2:1000px;
+    --m:2;
+    /* third breakpoint*/
+    --w3:700px;
+    --p:1;
+
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fill,
+        minmax(clamp(clamp(clamp(  
+                100%/(var(--n) + 1) + 0.1%,
+                (var(--w1) - 100vw)*1000,
+                100%/(var(--m) + 1) + 0.1%), 
+                (var(--w2) - 100vw)*1000,
+                100%/(var(--p) + 1) + 0.1%), 
+                (var(--w3) - 100vw)*1000,
+                100%), 1fr));
+    gap:10px;
+
+}
+
+.row{
+    text-align: center;
+    color: black;
+}
+
+.card {
+margin: 20px;
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+}
+
+.card-body {
+    padding-top: 0px;
+}
+
+.card-title {
+    border-bottom: solid 1px black;
+    font-size: 25px;
+    padding: 5px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black;
+
+    .fa {
+        font-size: 1.5rem !important;
+        position: relative;
+        top: -3px;
+        margin: 0.5rem !important;
+    }
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.second-title {
+    color: gray;
+}
+
+.card .btn {
+    background-color: #2d006b;
+    width: 49.4%;
+    margin: 0;
+    cursor: pointer;
+    color: white;
+}
+
+.card .btn:hover {
+    background-color: #7934d9;  
+    color: white;
+}
+
+.card-main {
+    width: 100%;
+    max-width: 500px;
+}
+

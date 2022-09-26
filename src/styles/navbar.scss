@@ -1,0 +1,46 @@
+.navbar {
+    background-color: #bdcc4f;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    padding: 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.active {
+    background-color: #cc5e4f;
+}
+
+.nav-link {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    height: 100%;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    // to balance with nav item 
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.navbar-toggler {
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.navbar-collapse {
+    
+}

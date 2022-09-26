@@ -1,0 +1,223 @@
+@font-face {
+  font-family: "Dosis";
+  src: url("../fonts/Dosis/Dosis-VariableFont_wght.ttf") format("truetype");
+  font-stretch: 25% 150%;
+  font-style: oblique 0deg 10deg;
+  font-weight: 100 900;
+  font-display: swap;
+}
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  font-family: "Dosis";
+}
+
+#gatsby-focus-wrapper {
+  z-index: -2;
+}
+
+#intro {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  grid-template-columns: 3fr 1fr 1fr;
+  background-color: rgb(19, 15, 26);
+  color: white;
+  z-index: -1;
+  position: relative;
+}
+
+#intro-name {
+  grid-column-start: 1;
+}
+
+#intro-extra {
+  grid-column-start: 2;
+}
+
+#about {
+  display: grid;
+  place-items: center;
+  padding-bottom: 5rem;
+}
+
+#projects {
+  display: grid;
+  place-items: center;
+  background-color: rgb(78, 36, 97);
+  padding: 4rem 0;
+  color: white;
+}
+#projects .fa {
+  font-size: 3rem;
+  margin: 2rem;
+}
+#projects h1 {
+  color: white;
+}
+#projects .separator {
+  background-color: white;
+}
+
+h1 {
+  font-size: calc(2rem + 1.5vw) !important;
+  color: rgb(91, 12, 128);
+}
+
+#contacts {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-weight: 300;
+}
+#contacts h1 {
+  margin-top: 2rem;
+}
+#contacts h2 {
+  font-weight: 300;
+  margin: auto;
+}
+#contacts div {
+  margin-bottom: 3rem;
+}
+#contacts .fa {
+  font-size: 3rem;
+  margin-top: 6rem;
+}
+
+#email {
+  text-align: center;
+}
+#email h2 {
+  width: 70%;
+}
+
+#resume {
+  text-align: center;
+  margin-bottom: 7rem !important;
+}
+#resume .fa {
+  position: relative;
+  top: -3px;
+  font-size: 2rem;
+  color: rgb(49, 23, 61);
+  opacity: 0.5;
+}
+#resume .fa:hover {
+  opacity: 1;
+}
+
+.separator {
+  height: 1px;
+  width: 20%;
+  background-color: black;
+  margin: 3em auto !important;
+}
+
+.contacts-container {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 0.6rem 0.75rem 0.5rem 0.5rem;
+  margin: 2rem;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 5px;
+}
+.contacts-container span {
+  margin: auto 0.5rem;
+}
+.contacts-container .fa {
+  position: relative;
+  top: -3px;
+  margin-top: 0 !important;
+  font-size: 2rem !important;
+  color: rgb(49, 23, 61);
+  opacity: 0.5;
+}
+
+#email a, #resume a {
+  color: inherit;
+  font-weight: 300;
+}
+#email a:hover *, #resume a:hover * {
+  transition: color 0.25s;
+  background-color: rgb(113, 79, 139);
+  color: white;
+}
+#email a:hover * .fa, #resume a:hover * .fa {
+  opacity: 1;
+}
+
+#intro-name {
+  font-size: 5rem;
+}
+
+#ava {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 3rem;
+  overflow: hidden;
+  margin: 8rem 2rem 2rem 2rem;
+  z-index: -1;
+}
+
+#ava-full {
+  filter: blur(10px);
+  position: absolute;
+}
+
+#ava-nobg {
+  position: absolute;
+  top: -200px;
+}
+
+.gatsby-image-wrapper {
+  overflow: visible;
+}
+
+#about-info {
+  text-align: center;
+}
+#about-info h3 {
+  font-weight: 300;
+  max-width: 70%;
+  margin: auto;
+}
+#about-info h3 b {
+  font-weight: 500;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#intro-shortcut-wrapper {
+  width: 100%;
+  position: absolute;
+  bottom: 5rem;
+  display: grid;
+  place-items: center;
+}
+
+#intro-shortcut {
+  color: rgb(163, 163, 163);
+  transition: all 0.3s;
+  text-align: center;
+  font-size: 24px;
+}
+#intro-shortcut:hover {
+  color: rgb(199, 154, 250);
+  translate: 0 10px;
+}
+#intro-shortcut:hover .fa {
+  translate: 0 10px;
+}
+#intro-shortcut .fa {
+  font-size: 2rem;
+  margin-top: 1rem;
+  transition: translate 0.3s;
+}/*# sourceMappingURL=index.css.map */
