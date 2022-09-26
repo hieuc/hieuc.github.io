@@ -19,7 +19,7 @@ const Projects = () => {
                 <img
                   className="card-img"
                   src={e.demoImage.publicURL}
-                  alt="asdsad"
+                  alt={e.name}
                 />
                 <div className="card-body">
                   <div className="card-title">
