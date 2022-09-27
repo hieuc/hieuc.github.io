@@ -1,0 +1,66 @@
+#fname-container {
+  margin-right: 3rem;
+  position: relative;
+}
+#fname-container svg path {
+  stroke: rgb(237, 212, 255);
+}
+#fname-container:hover #i-dot, #fname-container:hover #e-hat, #fname-container:hover #tone {
+  display: block;
+}
+
+#name-stroke {
+  stroke-dasharray: 1213.4;
+  stroke-dashoffset: 1213.4;
+  -webkit-animation: word-anim 2.5s forwards ease-in-out;
+          animation: word-anim 2.5s forwards ease-in-out;
+}
+
+#i-dot {
+  position: absolute;
+  left: 182px;
+  top: 127px;
+  display: none;
+  stroke-dasharray: 14.72;
+  stroke-dashoffset: 14.72;
+  -webkit-animation: word-anim 0.2s forwards ease-in-out;
+          animation: word-anim 0.2s forwards ease-in-out;
+}
+
+#e-hat {
+  position: absolute;
+  left: 227px;
+  top: 110px;
+  display: none;
+  stroke-dasharray: 48.3;
+  stroke-dashoffset: 48.3;
+  -webkit-animation: word-anim 0.4s forwards ease-in-out;
+          animation: word-anim 0.4s forwards ease-in-out;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+#tone {
+  position: absolute;
+  left: 257px;
+  top: 65px;
+  display: none;
+  stroke-dasharray: 49.651;
+  stroke-dashoffset: 49.651;
+  -webkit-animation: word-anim 0.4s forwards ease-in-out;
+          animation: word-anim 0.4s forwards ease-in-out;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+@-webkit-keyframes word-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes word-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}/*# sourceMappingURL=fname.css.map */

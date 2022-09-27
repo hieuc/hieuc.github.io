@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -16,26 +16,9 @@ import { StaticImage } from "gatsby-plugin-image"
 import Projects from "../components/projects"
 import Resume from "../files/resume.pdf"
 import IntroParticles from "../components/introparticles"
+import Fname from "../components/fname"
 
 const IndexPage = () => {
-  let avaRef = useRef(null)
-  let [avaBlur, setAvaBlur] = useState(0)
-
-  const avaAnimOnScroll = () => {
-    const avaCurrentPosition = avaRef.current.getBoundingClientRect().top
-    const windowHeight = window.innerHeight
-    const target = windowHeight / 3
-    const blur = Math.max(
-      3,
-      Math.sqrt(Math.abs(avaCurrentPosition - target) * 2)
-    )
-    setAvaBlur(blur)
-  }
-
-  useEffect(() => {
-    window.addEventListener("scroll", avaAnimOnScroll)
-  })
-
   return (
     <Layout>
       <div id="intro-shortcut-wrapper">
@@ -50,24 +33,24 @@ const IndexPage = () => {
       <div id="intro">
         <IntroParticles />
         <div id="intro-name">
-          <div>Hieu Chau</div>
+          <div style={{ display: "inline-flex" }}>
+            <Fname scale={1} />{" "}
+            <div style={{ position: "relative" }}>
+              <span id="lname">Chau</span>
+            </div>
+          </div>
+          <br />
           <h2> Software Developer</h2>
         </div>
         <div id="intro-extra"> </div>
       </div>
       <NavBar />
       <div id="about">
-        <div ref={avaRef} id="ava">
+        <div id="ava">
           <StaticImage
             src="../images/profile.jpg"
-            style={{ filter: `blur(${avaBlur}px)` }}
             alt="profile"
             id="ava-full"
-          />
-          <StaticImage
-            src="../images/profile-nobg.png"
-            id="ava-nobg"
-            alt="profile"
           />
         </div>
         <h1>HEY THERE!</h1>
@@ -76,7 +59,7 @@ const IndexPage = () => {
 
         <div id="about-info">
           <h3>
-            My name is <b>Hieu</b>.
+            My name is <b>Hieu</b> ("Hew").
           </h3>
           <h3>
             Or you can call me <b>Victor</b>.

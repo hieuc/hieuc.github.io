@@ -1,0 +1,65 @@
+#fname-container {
+    margin-right: 3rem;
+    position: relative;
+
+    svg {
+        path {
+            stroke: rgb(237, 212, 255);
+        }
+    }
+
+    &:hover {
+        #i-dot, #e-hat, #tone {
+            display: block;
+        }
+    }
+}
+
+#name-stroke {
+    stroke-dasharray: 1213.4;
+    stroke-dashoffset: 1213.4;
+
+    animation: word-anim 2.5s forwards ease-in-out;
+}
+
+#i-dot {
+    position: absolute;
+    left: 182px;
+    top: 127px;
+    display: none;
+
+    stroke-dasharray: 14.72;
+    stroke-dashoffset: 14.72;
+    animation: word-anim 0.2s forwards ease-in-out;
+    
+}
+
+#e-hat {
+    position: absolute;
+    left: 227px;
+    top: 110px;
+    display: none;
+
+    stroke-dasharray: 48.3;
+    stroke-dashoffset: 48.3;
+    animation: word-anim 0.4s forwards ease-in-out;
+    animation-delay: 0.2s;
+}
+
+#tone {
+    position: absolute;
+    left: 257px;
+    top: 65px;
+    display: none;
+
+    stroke-dasharray: 49.651;
+    stroke-dashoffset: 49.651;
+    animation: word-anim 0.4s forwards ease-in-out;
+    animation-delay: 0.6s;
+}
+
+@keyframes word-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
