@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import "../styles/projects.css"
-import { FaGithub, facross } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Projects = () => {
@@ -82,7 +82,7 @@ const Projects = () => {
                 </div>
                 <div
                   className="modal-content"
-                  dangerouslySetInnerHTML={{ __html: e.html }}
+                  dangerouslySetInnerHTML={{ __html: e.htmlContent }}
                 ></div>
               </div>
             </div>
@@ -101,6 +101,7 @@ const query = graphql`
         tech
         description
         github
+        htmlContent
         demoImage {
           publicURL
         }
@@ -108,7 +109,6 @@ const query = graphql`
           name
           link
         }
-        html
       }
     }
   }
