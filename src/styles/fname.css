@@ -47,8 +47,8 @@
   display: none;
   stroke-dasharray: 49.651;
   stroke-dashoffset: 49.651;
-  -webkit-animation: word-anim 0.4s forwards ease-in-out;
-          animation: word-anim 0.4s forwards ease-in-out;
+  -webkit-animation: word-anim 0.3s forwards ease-in-out;
+          animation: word-anim 0.3s forwards ease-in-out;
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
