@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { FaLinkedin, FaGithub, FaMugHot } from "react-icons/fa"
 
 import "../styles/layout.css"
+import Coffee from "./coffee"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -54,8 +55,14 @@ const Layout = ({ children }) => {
         </ul>
         <div> © {new Date().getFullYear()} Hieu Chau </div>
         <span>
-          Built with Gatsby and lots of{" "}
-          <FaMugHot style={{ position: "relative", top: "-4px" }} />
+          Built with Gatsby and lots of
+          <br />
+          <br />
+          <br />
+          <div style={{ width: "15px", margin: "auto" }}>
+            <Coffee />
+          </div>
+          {/* <FaMugHot style={{ position: "relative", top: "-4px" }} /> */}
         </span>
       </footer>
     </>

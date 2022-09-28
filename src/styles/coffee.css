@@ -1,0 +1,137 @@
+.coffee-cup-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.coffee-cup-container div {
+  margin: 0 !important;
+}
+
+.cup {
+  background-color: gray;
+  height: 20px;
+  width: 22px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  z-index: 1;
+}
+.cup::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 4px solid gray;
+  left: -9px;
+  top: 2px;
+  border-radius: 8px;
+}
+
+.steam {
+  position: absolute;
+  top: 0;
+  transform: rotate(90deg);
+  z-index: -2;
+}
+
+.steam1 {
+  position: absolute;
+  overflow: hidden;
+  height: 30px;
+  width: 30px;
+  left: -1rem;
+  bottom: -0.25rem;
+}
+.steam1::before {
+  position: absolute;
+  content: "aaaaa";
+  -webkit-text-decoration-style: wavy;
+          text-decoration-style: wavy;
+  -webkit-text-decoration-color: rgb(78, 78, 78);
+          text-decoration-color: rgb(78, 78, 78);
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  left: 3rem;
+  color: transparent;
+  -webkit-animation: steam-anim 3s infinite linear;
+          animation: steam-anim 3s infinite linear;
+  -webkit-animation-delay: 1 s;
+          animation-delay: 1 s;
+}
+
+.steam2 {
+  position: absolute;
+  overflow: hidden;
+  height: 30px;
+  width: 36px;
+  left: -1.5rem;
+  bottom: 0.25rem;
+}
+.steam2::before {
+  position: absolute;
+  content: "aaaaa";
+  -webkit-text-decoration-style: wavy;
+          text-decoration-style: wavy;
+  -webkit-text-decoration-color: rgb(78, 78, 78);
+          text-decoration-color: rgb(78, 78, 78);
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  left: 2.5rem;
+  color: transparent;
+  -webkit-animation: steam-anim 2.5s infinite linear;
+          animation: steam-anim 2.5s infinite linear;
+  -webkit-animation-delay: 1 s;
+          animation-delay: 1 s;
+}
+
+.steam3 {
+  position: absolute;
+  overflow: hidden;
+  height: 30px;
+  width: 39px;
+  left: -1.5rem;
+  bottom: 0rem;
+}
+.steam3::before {
+  position: absolute;
+  content: "aaaaa";
+  -webkit-text-decoration-style: wavy;
+          text-decoration-style: wavy;
+  -webkit-text-decoration-color: rgb(78, 78, 78);
+          text-decoration-color: rgb(78, 78, 78);
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  left: 2.75rem;
+  color: transparent;
+  -webkit-animation: steam-anim 3.5s infinite linear;
+          animation: steam-anim 3.5s infinite linear;
+  -webkit-animation-delay: 1 s;
+          animation-delay: 1 s;
+}
+
+@-webkit-keyframes steam-anim {
+  from {
+    opacity: 1;
+    font-size: 0.5rem;
+    top: 0.5rem;
+  }
+  to {
+    translate: -3rem;
+    opacity: 0;
+    font-size: 2.5rem;
+    top: -2rem;
+  }
+}
+
+@keyframes steam-anim {
+  from {
+    opacity: 1;
+    font-size: 0.5rem;
+    top: 0.5rem;
+  }
+  to {
+    translate: -3rem;
+    opacity: 0;
+    font-size: 2.5rem;
+    top: -2rem;
+  }
+}/*# sourceMappingURL=coffee.css.map */

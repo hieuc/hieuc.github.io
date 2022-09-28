@@ -17,6 +17,7 @@ import Projects from "../components/projects"
 import Resume from "../files/resume.pdf"
 import IntroParticles from "../components/introparticles"
 import Fname from "../components/fname"
+import Coffee from "../components/coffee"
 
 const IndexPage = () => {
   return (
@@ -40,7 +41,7 @@ const IndexPage = () => {
             </div>
           </div>
           <br />
-          <h2> Software Developer</h2>
+          <h2 id="title"> Software Developer</h2>
         </div>
         <div id="intro-extra"> </div>
       </div>
@@ -120,7 +121,7 @@ const IndexPage = () => {
           <a href={Resume} target="_blank" rel="noreferrer">
             <div className="contacts-container">
               <span>View</span>
-              <FaRegFilePdf className="fa" />
+              {/* <FaRegFilePdf className="fa" /> */}
             </div>
           </a>
         </div>

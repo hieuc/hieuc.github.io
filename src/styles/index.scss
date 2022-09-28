@@ -254,4 +254,34 @@ h1 {
 #lname {
     position: absolute;
     bottom: -1rem;
+
+    animation: lname-appear .4s forwards ease-in-out;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+#title {
+    opacity: 0;
+    animation: title-appear .4s forwards ease-in-out;
+    animation-delay: 2.4s;
+}
+
+@keyframes lname-appear {
+    from {
+        translate: -2rem;
+    }
+    to {
+        translate: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes title-appear {
+    from {
+        translate: 0 2rem;
+    }
+    to {
+        translate: 0 0;
+        opacity: 1;
+    }
 }

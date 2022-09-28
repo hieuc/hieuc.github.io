@@ -12,8 +12,8 @@
 #name-stroke {
   stroke-dasharray: 1213.4;
   stroke-dashoffset: 1213.4;
-  -webkit-animation: word-anim 2.5s forwards ease-in-out;
-          animation: word-anim 2.5s forwards ease-in-out;
+  -webkit-animation: word-anim 2s forwards ease-in-out;
+          animation: word-anim 2s forwards ease-in-out;
 }
 
 #i-dot {

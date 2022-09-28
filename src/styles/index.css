@@ -228,4 +228,55 @@ h1 {
 #lname {
   position: absolute;
   bottom: -1rem;
+  -webkit-animation: lname-appear 0.4s forwards ease-in-out;
+          animation: lname-appear 0.4s forwards ease-in-out;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  opacity: 0;
+}
+
+#title {
+  opacity: 0;
+  -webkit-animation: title-appear 0.4s forwards ease-in-out;
+          animation: title-appear 0.4s forwards ease-in-out;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+@-webkit-keyframes lname-appear {
+  from {
+    translate: -2rem;
+  }
+  to {
+    translate: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes lname-appear {
+  from {
+    translate: -2rem;
+  }
+  to {
+    translate: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes title-appear {
+  from {
+    translate: 0 2rem;
+  }
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+@keyframes title-appear {
+  from {
+    translate: 0 2rem;
+  }
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
 }/*# sourceMappingURL=index.css.map */
