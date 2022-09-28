@@ -121,7 +121,7 @@ const IndexPage = () => {
           <a href={Resume} target="_blank" rel="noreferrer">
             <div className="contacts-container">
               <span>View</span>
-              {/* <FaRegFilePdf className="fa" /> */}
+              {<FaRegFilePdf className="fa" />}
             </div>
           </a>
         </div>
