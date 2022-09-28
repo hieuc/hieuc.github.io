@@ -24,7 +24,6 @@
                 (var(--w3) - 100vw)*1000,
                 100%), 1fr));
     gap:10px;
-
 }
 
 .row{
@@ -33,7 +32,7 @@
 }
 
 .card {
-margin: 20px;
+    margin: 20px;
     transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
 }
 
@@ -69,7 +68,6 @@ margin: 20px;
     background-color: #2d006b;
     width: 49.4%;
     margin: 0;
-    cursor: pointer;
     color: white;
 }
 
@@ -83,3 +81,96 @@ margin: 20px;
     max-width: 500px;
 }
 
+.card-img {
+    cursor: pointer;
+  }
+
+#modal {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.modal-card {
+    background-color: white;
+    color: black;
+    width: 60%;
+    max-height: 70%;
+    margin: auto;
+    position: relative;
+    cursor: auto;
+    z-index: 102;
+    animation: popup-anim 0.2s ease-in-out forwards;
+    border-radius: 10px;
+
+    * {
+        padding: 1rem;
+    }
+}
+
+.modal-content, .modal-header {
+    opacity: 0;
+    animation: modal-fadein 0.4s ease forwards;
+    animation-delay: 0.2s;
+    
+}
+
+.modal-header {
+    border-bottom: 1px solid gray;
+    font-size: 1.75rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.modal-content {
+    font-size: 1.25rem;
+
+    * {
+        padding: 0;
+    }
+}
+
+.xmark {
+    position: absolute;
+    right: 0;
+    border: none;
+    padding: 0;
+    top: 0;
+    
+
+    &::after {
+        font-weight: bold;
+        font-size: 2.5rem;
+        right: 1.25rem;
+        position: absolute;
+        content: "\00d7";
+        cursor: pointer;
+    }
+}
+
+@keyframes modal-fadein {
+    from {
+        opacity: 0;
+        display: none;
+    } 
+    to {
+        opacity: 1;
+        display: block;
+    }
+}
+
+@keyframes popup-anim {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
