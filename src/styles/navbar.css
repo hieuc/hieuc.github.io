@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #bdcc4f;
+  background-color: #29085e;
   position: absolute;
   width: 100%;
   z-index: 100;
@@ -13,7 +13,12 @@
 }
 
 .active {
-  background-color: #cc5e4f;
+  background-color: #71188b;
+  color: white !important;
+}
+
+.navbar-brand, .navbar-brand:hover {
+  color: rgb(235, 230, 240);
 }
 
 .nav-link {
@@ -32,6 +37,15 @@
 
 .nav-item {
   width: 100%;
+}
+.nav-item a {
+  color: rgb(189, 189, 189);
+}
+.nav-item a:hover {
+  color: white;
+}
+.nav-item .disabled {
+  color: rgb(78, 78, 78);
 }
 
 .navbar-toggler {
