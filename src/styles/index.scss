@@ -44,6 +44,8 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
     padding-bottom: 5rem;
 }
 
+
+
 #projects {
     @include gridCenter();
     background-color: rgb(78, 36, 97);
@@ -206,6 +208,13 @@ h1 {
             font-weight: 500;
         }
     }
+
+    // DOESNT WORK
+    // @for $i from 1 through 9 {
+    //     &:nth-child(#{$i}) {
+    //         transition-delay: #{0.5 * $i}s;
+    //     }
+    // }
 }
 
 #tsparticles {
@@ -264,6 +273,80 @@ h1 {
     opacity: 0;
     animation: title-appear .4s forwards ease-in-out;
     animation-delay: 2.4s;
+}
+
+.hidden {
+    opacity: 0;
+    translate: -3rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    translate: 0;
+}
+
+.paperplane {
+    opacity: 0;
+}
+
+.paperplane-anim {
+    opacity: 1;
+    transition: opacity 1.5s ease;
+    animation: paperplane 1s forwards linear;
+}
+
+@keyframes paperplane {
+    0% {
+        transform: rotate(0) translateX(-30rem);
+        translate: 0 30rem;
+    }
+
+    10% {
+        transform: rotate(0) translateX(-7rem) translateY(0);
+        translate: -10rem 5rem;
+    }
+
+    24% {
+        transform: rotate(35deg) translateX(-5rem);
+        translate: -8rem 0rem;
+    }
+
+    41% {
+        transform: rotate(50deg) translateX(-5rem);
+        translate: -5rem -4rem;
+    }
+
+    55% {
+        transform: rotate(90deg) translateX(-5rem) ;
+        translate: -1rem -3rem;
+    }
+
+    66% {
+        transform: rotate(150deg) translateX(-5rem) ;
+        translate: 4rem;
+    }
+
+    69% {
+        transform: rotate(180deg) translateX(-5rem) ;
+        translate: 5rem 4rem;
+    }
+
+    78% {
+        transform: rotate(270deg) translateX(-5rem);
+        translate: 1rem 6rem;
+    }
+
+    86% {
+        transform: rotate(360deg) translateX(-5rem);
+        translate: 2rem 5rem;
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(0) ;
+        translate: 0 0;
+    }
 }
 
 @keyframes lname-appear {

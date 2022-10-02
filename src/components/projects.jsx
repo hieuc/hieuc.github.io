@@ -2,12 +2,22 @@ import React, { useState } from "react"
 import "../styles/projects.css"
 import { FaGithub } from "react-icons/fa"
 import { useStaticQuery, graphql } from "gatsby"
+import { useInView } from "react-intersection-observer"
 
 const Projects = () => {
   const data = useStaticQuery(query)
   // project that being expanded for more info.
   // index starts from 0, -1 is the inactive state
   const [active, setActive] = useState(-1)
+
+  // const { projectsRef, projectsInView, entry } = useInView({
+  //   threshold: 0,
+  // })
+
+  // console.log("asdsadsa")
+
+  // console.log(projectsInView)
+  // console.log(entry)
 
   return (
     <div id="projects-container">
@@ -25,6 +35,7 @@ const Projects = () => {
                     src={e.demoImage.publicURL}
                     alt={e.name}
                     onClick={() => {
+                      console.log("yooo")
                       setActive(i)
                     }}
                   />

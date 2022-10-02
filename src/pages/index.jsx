@@ -1,5 +1,4 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useState } from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -12,14 +11,30 @@ import {
   FaCogs,
   FaArrowDown,
 } from "react-icons/fa"
+import { useInView } from "react-intersection-observer"
 import { StaticImage } from "gatsby-plugin-image"
 import Projects from "../components/projects"
 import Resume from "../files/resume.pdf"
 import IntroParticles from "../components/introparticles"
 import Fname from "../components/fname"
-import Coffee from "../components/coffee"
 
 const IndexPage = () => {
+  const [contactRef, contactInView] = useInView({
+    threshold: 0.4,
+  })
+
+  const [emailRef, emailInView] = useInView({
+    threshold: 0.3,
+  })
+
+  const [resumeRef, resumeInView] = useInView({
+    threshold: 0.3,
+  })
+
+  const [aboutRef, aboutInView] = useInView({
+    threshold: 0.3,
+  })
+
   return (
     <Layout>
       <div id="intro-shortcut-wrapper">
@@ -58,26 +73,38 @@ const IndexPage = () => {
 
         <div className="separator" />
 
-        <div id="about-info">
-          <h3>
+        <div ref={aboutRef} id="about-info">
+          <h3 className={"hidden " + (aboutInView ? "show" : "")}>
             My name is <b>Hieu</b> ("Hew").
           </h3>
-          <h3>
+          <h3
+            style={{ transitionDelay: "0.50s" }}
+            className={"hidden " + (aboutInView ? "show" : "")}
+          >
             Or you can call me <b>Victor</b>.
           </h3>
           <br />
-          <h3>
+          <h3
+            style={{ transitionDelay: "1s" }}
+            className={"hidden " + (aboutInView ? "show" : "")}
+          >
             I graduated <b>with Honors</b> on <b>December 2021</b> from{" "}
             <b>University of Washington Tacoma </b>
             with a Bachelor's of Science in <b>Computer Science</b> and Systems.
           </h3>
           <br />
-          <h3>
+          <h3
+            style={{ transitionDelay: "1.25s" }}
+            className={"hidden " + (aboutInView ? "show" : "")}
+          >
             I love working with data and bring them to life with visualizations.
             That's the <b>full-stack</b>!
           </h3>
           <br />
-          <h3>
+          <h3
+            style={{ transitionDelay: "1.5s" }}
+            className={"hidden " + (aboutInView ? "show" : "")}
+          >
             Ultimately, I would hope to involve and make an impact in the
             research development of Machine Learning (NLP, CV) in the future,
             and how it can apply to the professional software development world.
@@ -90,14 +117,23 @@ const IndexPage = () => {
         <div className="separator" />
         <Projects />
       </div>
-      <div id="contacts">
-        <FaRegPaperPlane className="fa" />
+
+      <div ref={contactRef} id="contacts">
+        <FaRegPaperPlane
+          className={
+            "fa paperplane " + (contactInView ? "paperplane-anim" : "")
+          }
+        />
 
         <h1>CONTACTS</h1>
 
         <div className="separator" />
 
-        <div id="email">
+        <div
+          ref={emailRef}
+          id="email"
+          className={"hidden " + (emailInView ? "show" : "")}
+        >
           <h2>
             Feel free to shoot me a message if you want to keep in touch or chat
             about anything!
@@ -116,7 +152,11 @@ const IndexPage = () => {
 
         <div className="separator" />
 
-        <div id="resume">
+        <div
+          ref={resumeRef}
+          id="resume"
+          className={"hidden " + (resumeInView ? "show" : "")}
+        >
           <h2> Here is my résumé </h2>
           <a href={Resume} target="_blank" rel="noreferrer">
             <div className="contacts-container">
