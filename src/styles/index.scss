@@ -227,6 +227,19 @@ h1 {
     margin: 0;
     z-index: -1;
     background-color: rgb(19, 15, 26);
+    canvas {
+        animation: particles-appear 5s forwards ease;
+    }
+    
+}
+
+@keyframes particles-appear {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
 }
 
 #intro-shortcut-wrapper {

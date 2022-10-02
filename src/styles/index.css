@@ -196,7 +196,28 @@ h1 {
   z-index: -1;
   background-color: rgb(19, 15, 26);
 }
+#tsparticles canvas {
+  -webkit-animation: particles-appear 5s forwards ease;
+          animation: particles-appear 5s forwards ease;
+}
 
+@-webkit-keyframes particles-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes particles-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 #intro-shortcut-wrapper {
   width: 100%;
   position: absolute;

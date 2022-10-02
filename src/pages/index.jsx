@@ -84,6 +84,8 @@ const IndexPage = () => {
             Or you can call me <b>Victor</b>.
           </h3>
           <br />
+          <br />
+          <br />
           <h3
             style={{ transitionDelay: "1s" }}
             className={"hidden " + (aboutInView ? "show" : "")}
