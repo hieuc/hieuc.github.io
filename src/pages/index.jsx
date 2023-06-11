@@ -99,8 +99,8 @@ const IndexPage = () => {
             style={{ transitionDelay: "1.25s" }}
             className={"hidden " + (aboutInView ? "show" : "")}
           >
-            I love working with data and bring them to life with visualizations.
-            That's the <b>full-stack</b>!
+            At the moment, I'm looking to gain professional experience as a{" "}
+            <b>full-stack</b> software engineer.
           </h3>
           <br />
           <h3
@@ -109,7 +109,7 @@ const IndexPage = () => {
           >
             Ultimately, I would hope to involve and make an impact in the
             research development of Machine Learning (NLP, CV) in the future,
-            and how it can apply to the professional software development world.
+            and how it can apply to the practical software development world.
           </h3>
         </div>
       </div>

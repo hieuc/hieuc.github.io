@@ -27,7 +27,7 @@
       "links": [
         {
           "name": "Deployment",
-          "link": "https://algoviz.xyz/"
+          "link": "https://algo-visualizer.herokuapp.com/"
         }
       ],
       "htmlContent": "<p><b>Context</b></p><p> AlgoViz started as a project of the Algorithm Visualizer team in the Huscii Coding Project club at UW Seattle. The idea of it potentially being used in data structure and algorithm classes was the main motivator for me. </p> <p> Because I am super new to React, the project went through multiple refactors whenever I saw the new path would benefit the project long term (from class components to functional ones, component design changes, or Typescript switch).</p><p> Currently, I am keeping the forked repo as a personal project and have been making rapid changes to it as a way to learn new techs. </p><p> <b>On the technical side...</b></p> <p> The frontend is React with Redux Toolkit for state management. The web server is Express where the algorithms are evaluated. There is a MongoDB for keeping feedback. The application is deployed on a single AWS EC2 instance. </p> <p> Credits to the members of the HCP club that gave valuable feedback to AlgoViz</p><p>I learned a lot about React, frontend designs, and application deployment. Next is Golang for the web server and some CI/CD.</p>"
@@ -72,7 +72,7 @@
           "link": "https://hieuc.github.io/pentagoes/"
         }
       ],
-      "htmlContent": "<p><b>Context</b></p><p> Pentago was an assignment in my AI class to implement Alpha-Beta pruning and Minimax algorithms. All the game visuals and interactions were supposed to be through the terminal. That was too boring for me so I implemented a browser version instead. </p><p>Luckily, my professor and TAs were willing to accept Javascript submissions rather than just Java/Python.</p>"
+      "htmlContent": "<p><b>Context</b></p><p> Pentago was an assignment in my AI class to implement Alpha-Beta pruning and Minimax algorithms. All the game visuals and interactions were supposed to be through the terminal. I implemented a browser version to make the assignment more interesting. </p>"
     }
   ]
 }
